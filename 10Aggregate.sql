@@ -15,6 +15,18 @@ SELECT
 	AVG(Marks) AS AverageMarks
 FROM 
 	Student;
+    
+-- Round
+SELECT 
+	ROUND(AVG(Marks)) AS AverageMarks
+FROM 
+	Student;
+    
+-- Format
+SELECT 
+	FORMAT(AVG(Marks),2) AS AverageMarks
+FROM 
+	Student;
 
 -- Using student tabel from '2Keyword' file
 -- MAX()
@@ -37,5 +49,6 @@ FROM
 GROUP BY 
 	City;
     
+
     
 SELECT group_concat(marks," ",city) from student ;

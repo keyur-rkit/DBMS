@@ -44,7 +44,7 @@ ALTER TABLE NewEmployees MODIFY Position VARCHAR(255) COMMENT 'Contains position
 
 -- 5. DROP Command
 -- Drop a table
-DROP TABLE NewEmployees;
+DROP TABLE IF EXISTS NewEmployees;
 
 -- Drop a database
 DROP DATABASE Practice;

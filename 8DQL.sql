@@ -18,6 +18,21 @@ FROM
 	Student 
 WHERE 
 	City = 'Surat';
+    
+-- Filter Record with Like
+SELECT 
+    *
+FROM
+    Student
+WHERE
+    City LIKE '%t';
+    
+SELECT 
+    *
+FROM
+    Student
+WHERE
+    City LIKE 'sur_t';
 
 -- Sort Records Using ORDER BY
 SELECT 

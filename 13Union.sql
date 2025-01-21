@@ -3,18 +3,23 @@
 -- Using subject tabel from '12Joins' file
 -- Basic UNION (Remove Duplicates)
 SELECT 
-	Name, Class, Marks 
-FROM 
-	Student 
-WHERE 
-	Class = 12
-UNION
-SELECT 
-	Name, Class, Marks 
-FROM 
-	Student 
-WHERE 
-	Class = 11;
+    Name, Class, Marks
+FROM
+    Student
+WHERE
+    Class = 12 
+UNION SELECT 
+    Name, Class, Marks
+FROM
+    Student
+WHERE
+    Class = 11 
+UNION SELECT 
+    Name, Class, Marks
+FROM
+    Student
+WHERE
+    Class = 10;
 
 -- UNION ALL (Include Duplicates)
 SELECT 
