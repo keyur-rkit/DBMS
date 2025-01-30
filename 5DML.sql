@@ -7,7 +7,7 @@ CREATE TABLE Employees (
 
 -- INSERT
 -- Insert Single Row
-INSERT INTO Employees (EmployeeID, Name, City, IsFullTime) VALUES (1, 'Keyur','Morbi',TRUE);
+INSERT INTO Employees (EmployeeID, Name, City, IsFullTime) VALUE (1, 'Keyur','Morbi',TRUE);
 
 -- Insert Multiple Rows
 INSERT INTO Employees (EmployeeID, Name, City, IsFullTime) VALUES 
@@ -38,4 +38,5 @@ DELETE FROM Employees;
 
 -- For update or delete records without specifying a key
 SET SQL_SAFE_UPDATES = 0;
+SHOW VARIABLES LIKE 'SQL_SAFE_UPDATES';
 

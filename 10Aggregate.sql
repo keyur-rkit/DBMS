@@ -48,7 +48,6 @@ FROM
 	Student
 GROUP BY 
 	City;
-    
 
-    
+-- combines the results into a single string
 SELECT group_concat(marks," ",city) from student ;

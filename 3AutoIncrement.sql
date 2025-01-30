@@ -13,6 +13,10 @@ INSERT INTO Student2 (Id,Name) VALUES
 (10,"Vivek"),
 (null,"Drashti");
 
+INSERT INTO Student2 (Id,Name) VALUES
+(null,"Raj"),
+(null,"Het");
+
 -- changing auto_increment start value
 ALTER TABLE Student2 AUTO_INCREMENT = 100;
 

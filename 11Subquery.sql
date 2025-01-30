@@ -6,10 +6,12 @@ SELECT
 	(SELECT AVG(Marks) FROM Student) AS AvgMarks
 FROM 
 	Student
-WHERE 
-	Marks > (SELECT AVG(Marks) FROM Student);
+HAVING 
+	Marks > AvgMarks;
 -- Find students with marks higher than the average marks
 
+-- WHERE filters rows before the aggregation.
+-- HAVING filters rows after the aggregation
 
 -- Subquery in WHERE clause
 SELECT 
@@ -33,17 +35,6 @@ FROM
 WHERE 
 	Marks > (SELECT AVG(Marks) FROM Student S2 WHERE S1.Class = S2.Class);
 -- List students who have marks greater than the average marks of their class
-
-
--- Subquery to find maximum value
-SELECT 
-	Name,
-	Marks
-FROM 
-	Student
-WHERE 
-	Marks = (SELECT MAX(Marks) FROM Student);
--- Find the student(s) with the highest marks
 
 
 -- Subquery with ANY/ALL

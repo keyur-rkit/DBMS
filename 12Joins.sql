@@ -14,6 +14,9 @@ INSERT INTO Subject (SubjectId, SubjectName, Class) VALUES
 (6, 'Gujrati', 9),
 (7,'Sanskrit',11);
 
+SELECT * FROM student;
+SELECT * FROM Subject;
+
 -- INNER JOIN
 SELECT 
 	S.Name AS StudentName,

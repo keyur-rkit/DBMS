@@ -17,9 +17,10 @@ INSERT into employees values(1,"keyur","emp","1999-12-01","idk");
 ALTER TABLE Employees ADD Salary DECIMAL(10, 2);
 
 -- Modify the data type of an existing column
+-- Error : Incorrect Int value
 ALTER TABLE Employees MODIFY Department INT;
 
--- Rename a column
+-- Rename a column or/and constrains
 ALTER TABLE Employees CHANGE HireDate JoiningDate DATE;
 
 -- Drop a column
@@ -27,7 +28,9 @@ ALTER TABLE Employees DROP COLUMN Salary;
 
 -- Rename the table
 ALTER TABLE Employees RENAME TO CompanyEmployees;
+ALTER TABLE Employees RENAME COLUMN HireDate TO JoiningDate;
 
+SELECT * FROM CompanyEmployees;
 
 -- 3. RENAME Command
 -- Rename Employees to NewEmployees
@@ -47,7 +50,7 @@ ALTER TABLE NewEmployees MODIFY Position VARCHAR(255) COMMENT 'Contains position
 DROP TABLE IF EXISTS NewEmployees;
 
 -- Drop a database
-DROP DATABASE Practice;
+-- DROP DATABASE Practice;
 
 
 -- 6. TRUNCATE Command
@@ -64,5 +67,7 @@ INSERT INTO Sample (Name) VALUES
 
 -- Truncate the table
 TRUNCATE TABLE Sample;
+
+SELECT * FROM Sample;
 
 

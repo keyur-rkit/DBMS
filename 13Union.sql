@@ -1,6 +1,6 @@
 -- Using student tabel from '2Keyword' file
--- Using student tabel from '2Keyword' file
 -- Using subject tabel from '12Joins' file
+
 -- Basic UNION (Remove Duplicates)
 SELECT 
     Name, Class, Marks

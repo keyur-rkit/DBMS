@@ -1,3 +1,5 @@
+-- database for DBMS CURD and final demo of basic api
+Use library;
 INSERT INTO Books (ISBN, BookName, Category, Author) VALUES
 (1001, 'The Great Gatsby', 'Fiction', 'F. Scott Fitzgerald'),
 (1487, 'Python Mastery', 'Technology', 'Sarah Code'),
@@ -30,3 +32,13 @@ UPDATE Books SET BookName = "NewName", Category = "NewCategory" , Author = "NewA
 
 -- delete 
 DELETE FROM Books where ISBN =1;
+
+
+CREATE TABLE user (
+	id int primary key auto_increment,
+    username varchar(150) unique,
+    password varchar(150) not null,
+    role varchar(20) not null
+);
+
+SELECT * FROM user;

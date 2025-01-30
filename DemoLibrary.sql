@@ -283,18 +283,3 @@ EXPLAIN FORMAT = JSON SELECT b.BookTitle, c.CustomerName
 FROM Books b 
 JOIN IssueStatus i ON b.ISBN = i.ISBNBook
 JOIN Customer c ON i.IssuedCust = c.CustomerId;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

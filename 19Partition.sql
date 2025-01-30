@@ -1,9 +1,8 @@
 
-CREATE DATABASE IF NOT EXISTS PartitionDemo;
-USE PartitionDemo;
+USE Practice;
 
 -- Create a partitioned table.
-CREATE TABLE sales (
+CREATE TABLE IF NOT EXISTS sales (
     id INT NOT NULL,
     product_name VARCHAR(100) NOT NULL,
     sales_amount DECIMAL(10, 2) NOT NULL,
@@ -27,7 +26,12 @@ INSERT INTO sales (id, product_name, sales_amount, sales_date) VALUES
 -- Retrieve all records to see how data is stored across partitions.
 SELECT * FROM sales;
 
-EXPLAIN SELECT * FROM sales WHERE sales_date = '2021-03-10';
+EXPLAIN SELECT * FROM Sales;
+ 
+SELECT TABLE_NAME, PARTITION_NAME , TABLE_ROWS
+FROM INFORMATION_SCHEMA.PARTITIONS 
+WHERE TABLE_SCHEMA = "Practice" AND TABLE_NAME="Sales";
+
 
 -- Add partition 
 ALTER TABLE sales ADD PARTITION (
@@ -38,4 +42,4 @@ ALTER TABLE sales ADD PARTITION (
 ALTER TABLE sales DROP PARTITION p3;
 
 -- DROP TABLE sales;
--- DROP DATABASE PartitionDemo;
+

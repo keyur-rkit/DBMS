@@ -9,7 +9,7 @@ CREATE TABLE Student (
 	SubjectId INT
 );
 
-truncate table student;
+-- truncate table student;
 
 INSERT INTO Student (Id, Name, Class, Marks, City, SubjectId) VALUES
 (1, 'Keyur', 12, 80, NULL, 1),

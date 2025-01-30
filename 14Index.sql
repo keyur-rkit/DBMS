@@ -6,9 +6,11 @@ FROM
 WHERE
     last_name = 'ross';
 
-CREATE INDEX idx_last_name ON user_details(last_name);
-ALTER TABLE user_details DROP INDEX idx_last_name;
+-- Composite index
+CREATE INDEX idx_full_name ON user_details(first_name,last_name);
+ALTER TABLE user_details DROP INDEX idx_full_name;
 
+SHOW INDEXES FROM user_details;
 
 SELECT 
     username, password
@@ -16,7 +18,8 @@ FROM
     user_details
 WHERE
     status = 1;
-    
+
+-- simple index
 CREATE INDEX idx_status ON user_details(status);
 ALTER TABLE user_details DROP INDEX idx_status;
 

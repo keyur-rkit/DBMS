@@ -25,6 +25,7 @@ WHERE expensesName = "salary";
 
 -- Disable safe updates to allow updates without a WHERE clause
 SET SQL_SAFE_UPDATES = 0;
+SHOW variables LIKE "SQL_SAFE_UPDATES";
 
 -- Triggers to update salary expense after insert, update, or delete in the employee table
 CREATE TRIGGER afterSalaryInsert 
@@ -63,11 +64,14 @@ BEGIN
     DECLARE done INT DEFAULT FALSE;
     DECLARE stuID INT;
     DECLARE stuCity VARCHAR(50);
+    -- declare cursor
     DECLARE readNullCursor CURSOR FOR SELECT id, city FROM student;
     DECLARE CONTINUE HANDLER FOR NOT FOUND SET done = TRUE;
-
+	
+    -- open cursor
     OPEN readNullCursor;
     readLoop: LOOP
+    -- fetch cursor
         FETCH readNullCursor INTO stuID, stuCity;
         IF done THEN LEAVE readLoop; END IF;
         IF stuCity IS NULL THEN 
@@ -76,6 +80,7 @@ BEGIN
     END LOOP;
 
     SELECT * FROM student;
+    -- close cursor
     CLOSE readNullCursor;
 END $$
 DELIMITER ;

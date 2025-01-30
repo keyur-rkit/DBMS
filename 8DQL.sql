@@ -42,21 +42,17 @@ FROM
 ORDER BY 
 	Class DESC;
 
--- Count the Number of Rows
-SELECT 
-	COUNT(Id) AS TotalStudents 
-FROM 
-	Student;
-
 -- Group Records Using GROUP BY
 SELECT 
-	City, COUNT(Id) AS StudentCount 
-FROM 
-	Student 
-GROUP BY 
-	City;
+    City, COUNT(Id) AS StudentCount
+FROM
+    Student
+GROUP BY City
+HAVING StudentCount > 2
+ORDER BY City DESC
+LIMIT 2;
     
 
-USE PRACTICE;
+-- USE PRACTICE;
 
 

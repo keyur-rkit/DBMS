@@ -17,6 +17,7 @@ INSERT INTO Employee (Id,Name,Salary) VALUES
 DROP TABLE Employee;
 
 -- Sort employee name alphabetically (default for order by is asc)
+-- use BINARY for case sensitive sort
 SELECT 
 	Id,Name
 FROM
