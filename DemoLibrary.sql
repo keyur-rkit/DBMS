@@ -144,8 +144,6 @@ FROM
 WHERE
     CustomerName IS NOT NULL;
 
--- DML DQL DCL TCL DDL
-
 
 -- Limit
 -- Get top 5 expensive books
